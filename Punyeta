@@ -1,16 +1,5 @@
 --[[ Deobfuscated | Full Source Leak ]]
 Credits : MLR TAKEN 
-
--- Check for whitelist (optional, assuming file-based whitelist for paid version)
-local success, whitelist = pcall(readfile, "whitelist.txt")
-if success and whitelist then
-    local success, parsed = pcall(function() return HttpService:JSONDecode(whitelist) end)
-    if success and not table.find(parsed, LocalPlayer.Name) then
-        LocalPlayer:Kick("You are not whitelisted!")
-        return
-    end
-end
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CAXAP26BKyCH/library/refs/heads/main/Uilibrary"))()
 local Window = Library:AddWindow("Doca V1 | Paid Version", {
     main_color = Color3.fromRGB(255, 0, 0),
